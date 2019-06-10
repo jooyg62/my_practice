@@ -1,35 +1,35 @@
 package practice_enum;
 
 public enum MyGame {
-	STARCRAFT("½ºÅ¸Å©·¡ÇÁÆ®", cal(19000), "Àü·«/½Ã¹Ä·¹ÀÌ¼Ç"),
-	WARCRAFT("¿öÅ©·¡ÇÁÆ®", cal(39000), "Àü·«/½Ã¹Ä·¹ÀÌ¼Ç"),
-	DOTA2("µµÅ¸2", cal(100), "Çùµ¿"),
-	BATTLEGROUND("¹èÆ²±×¶ó¿îµå", cal(20000), "FPS");
+    STARCRAFT("ìŠ¤íƒ€í¬ë˜í”„íŠ¸", cal(19000), "ì „ëµ/ì‹œë®¬ë ˆì´ì…˜"),
+    WARCRAFT("ì›Œí¬ë˜í”„íŠ¸", cal(39000), "ì „ëµ/ì‹œë®¬ë ˆì´ì…˜"),
+    DOTA2("ë„íƒ€2", cal(100), "í˜‘ë™"),
+    BATTLEGROUND("ë°°í‹€ê·¸ë¼ìš´ë“œ", cal(20000), "FPS");
 	
-	final private String name;
-	final private int price;
-	final private String ganre;
-	
-	private MyGame(String name, int price, String ganre) {
-		this.name = name;
-		this.price = price;
-		this.ganre = ganre;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public String getGanre() {
-		return ganre;
-	}
-	
-	public static int cal(int price) {
-		return 2 * price;
-	}
-	
+    final private String name;
+    final private int price;
+    final private String ganre;
+    
+    private MyGame(String name, int price, String ganre) {
+        this.name = name;
+        this.price = price;
+        this.ganre = ganre;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getPrice() {
+        return price;
+    }
+    
+    public String getGanre() {
+        return ganre;
+    }
+    
+    public static int cal(int price) {
+        return 2 * price;
+    }
+    
 }

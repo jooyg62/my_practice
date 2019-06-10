@@ -1,43 +1,43 @@
 package practice_enum;
 
 public class EnumMain {
-	public static void main(String[] args) {
-		
-		// 1. °á°ú: 'STARCRAFT'
-		System.out.println("---------- 1. °á°ú: 'STARCRAFT' ----------");
-		System.out.println(MyGame.STARCRAFT);
-		System.out.println(MyGame.STARCRAFT.toString());
-		System.out.println(MyGame.STARCRAFT.name());
-		
-		// 2. String °ª ºñ±³
-		System.out.println("---------- 2. String °ª ºñ±³ ----------");
-		System.out.println("STARCRAFT".equals(MyGame.STARCRAFT)); // false : MyGame.STARCRAFT ´Â Å¬·¡½º ÀÌ´Ù.
-		System.out.println("STARCRAFT".equals(MyGame.STARCRAFT.toString())); // true
-		System.out.println("STARCRAFT".equals(MyGame.STARCRAFT.name())); // true
-		
-		// 3. Á¸ÀçÇÏ´Â enum, ordinal Ãâ·Â
-		// : STARCRAFT, WARCRAFT, DOTA2, BATTLEGROUND
-		// : ordinal() Àº µî·ÏµÈ enum ÀÎµ¦½º °ª - 0 ºÎÅÍ ½ÃÀÛ
-		System.out.println("---------- 3. Á¸ÀçÇÏ´Â enum, ordinal Ãâ·Â ----------");
-		for(MyGame mygame : MyGame.values()) {
-			System.out.println("name: " + mygame + ", ordinal: " + mygame.ordinal());
-		}
-		
-		// 4. valuOf¸¦ ÅëÇÑ enum °¡Á®¿À±â 
-		System.out.println("---------- 4. valuOf¸¦ ÅëÇÑ enum °¡Á®¿À±â  ----------");
-		MyGame mygame1 = MyGame.valueOf(MyGame.class, "DOTA2");
-		MyGame mygame2 = MyGame.valueOf("DOTA2");
-		MyGame mygame3 = MyGame.DOTA2;
-		
-		System.out.println(mygame1);
-		System.out.println(mygame2);
-		System.out.println(mygame3);
-		
-		// 5. ¼Ó¼º°ª °¡Á®¿À±â
-		System.out.println("---------- 5. ¼Ó¼º°ª °¡Á®¿À±â  ----------");
-		System.out.println(mygame1.getName());
-		System.out.println(mygame1.getPrice());
-		System.out.println(mygame1.getGanre());
-		
-	}
+    public static void main(String[] args) {
+    	
+        // 1. ê²°ê³¼: 'STARCRAFT'
+        System.out.println("---------- 1. ê²°ê³¼: 'STARCRAFT' ----------");
+        System.out.println(MyGame.STARCRAFT);
+        System.out.println(MyGame.STARCRAFT.toString());
+        System.out.println(MyGame.STARCRAFT.name());
+        
+        // 2. String ê°’ ë¹„êµ
+        System.out.println("---------- 2. String ê°’ ë¹„êµ ----------");
+        System.out.println("STARCRAFT".equals(MyGame.STARCRAFT)); // false : MyGame.STARCRAFT ëŠ” í´ë˜ìŠ¤ ì´ë‹¤.
+        System.out.println("STARCRAFT".equals(MyGame.STARCRAFT.toString())); // true
+        System.out.println("STARCRAFT".equals(MyGame.STARCRAFT.name())); // true
+        
+        // 3. ì¡´ì¬í•˜ëŠ” enum, ordinal ì¶œë ¥
+        // : STARCRAFT, WARCRAFT, DOTA2, BATTLEGROUND
+        // : ordinal() ì€ ë“±ë¡ëœ enum ì¸ë±ìŠ¤ ê°’ - 0 ë¶€í„° ì‹œì‘
+        System.out.println("---------- 3. ì¡´ì¬í•˜ëŠ” enum, ordinal ì¶œë ¥ ----------");
+        for(MyGame mygame : MyGame.values()) {
+            System.out.println("name: " + mygame + ", ordinal: " + mygame.ordinal());
+        }
+        
+        // 4. valuOfë¥¼ í†µí•œ enum ê°€ì ¸ì˜¤ê¸° 
+        System.out.println("---------- 4. valuOfë¥¼ í†µí•œ enum ê°€ì ¸ì˜¤ê¸°  ----------");
+        MyGame mygame1 = MyGame.valueOf(MyGame.class, "DOTA2");
+        MyGame mygame2 = MyGame.valueOf("DOTA2");
+        MyGame mygame3 = MyGame.DOTA2;
+        
+        System.out.println(mygame1);
+        System.out.println(mygame2);
+        System.out.println(mygame3);
+        
+        // 5. ì†ì„±ê°’ ê°€ì ¸ì˜¤ê¸°
+        System.out.println("---------- 5. ì†ì„±ê°’ ê°€ì ¸ì˜¤ê¸°  ----------");
+        System.out.println(mygame1.getName());
+        System.out.println(mygame1.getPrice());
+        System.out.println(mygame1.getGanre());
+        
+    }
 }

@@ -7,27 +7,27 @@ import java.lang.reflect.Method;
 import com.cafe24.service.UserService;
 
 /**
- * ·±Å¸ÀÓ Áß ÀÚ¹Ù ÄŞÆ÷³ÍÆ®(Å¬·¡½º) ¼Ó¼º È®ÀÎ
+ * ëŸ°íƒ€ì„ ì¤‘ ìë°” ì½¤í¬ë„ŒíŠ¸(í´ë˜ìŠ¤) ì†ì„± í™•ì¸ ê°€ëŠ¥.
  */
 public class ReflectionMain {
 	
 	public static void main(String[] args) throws ClassNotFoundException {
-		// Class.class Å¬·¡½º¿¡ ´ëÇÑ Á¤ÀÇ Á¤º¸¸¦ °¡Áö°í ÀÖÀ½.
-		// ? (wildcard) - typeÀ» ÁöÁ¤
+		// Class.class í´ë˜ìŠ¤ì— ëŒ€í•œ ì •ì˜ ì •ë³´ë¥¼ ê°€ì§€ê³  ìˆìŒ.
+		// ? (wildcard) - typeì„ ì§€ì •
 		
 		/**
-		 *  1. Å¬·¡½º °¡Á®¿À±â
-		 *  : Å¬·¡½º¸¦ ¸øÃ£À» °æ¿ì ClassNotFoundException ¹ß»ı
+		 *  1. í´ë˜ìŠ¤ ê°€ì ¸ì˜¤ê¸°
+		 *  : í´ë˜ìŠ¤ë¥¼ ëª»ì°¾ì„ ê²½ìš° ClassNotFoundException ë°œìƒ
 		 */
 
-		//ÀÚ¹Ù±âº»Çü¿¡ ´ëÇÑ Å¬·¡½º Á¤º¸¸¦ ¾ò´Â ¹æ¹ı. 3°¡Áö
-		//¹æ¹ı 1 : 
+		//ìë°”ê¸°ë³¸í˜•ì— ëŒ€í•œ í´ë˜ìŠ¤ ì •ë³´ë¥¼ ì–»ëŠ” ë°©ë²•. 3ê°€ì§€
+		//ë°©ë²• 1 : 
 		//Class<?> c = Class.forName("java.lang.String");
 		
-		//¹æ¹ı 2 : 
+		//ë°©ë²• 2 : 
 	    //Class<Integer> integerClass1 = int.class;
 		
-	    //¹æ¹ı 3 : ±âº»ÇüÀÇ °æ¿ì (Integer ¿Í °°Àº) Wrapper ¿¡ ±âÁ¤ÀÇµÈ TYPEÀ» »ç¿ëÇÑ´Ù. 
+	    //ë°©ë²• 3 : ê¸°ë³¸í˜•ì˜ ê²½ìš° (Integer ì™€ ê°™ì€) Wrapper ì— ê¸°ì •ì˜ëœ TYPEì„ ì‚¬ìš©í•œë‹¤. 
 		//Class<Integer> integerClass2 = Integer.TYPE;
 
 		Class<?> anyClass = Class.forName("com.cafe24.service.UserService");
@@ -35,8 +35,8 @@ public class ReflectionMain {
 		System.out.println("Class Name: " + anyClass.getName());
 		
 		/**
-		 *  2. ÇÊµå Á¤º¸
-		 *  : private ÀÏ °æ¿ì Ãâ·Â µÇÁö ¾Ê´Â´Ù.
+		 *  2. í•„ë“œ ì •ë³´
+		 *  : private ì¼ ê²½ìš° ì¶œë ¥ ë˜ì§€ ì•ŠëŠ”ë‹¤.
 		 */
 		Field[] fields = anyClass.getFields();
 		
@@ -47,8 +47,8 @@ public class ReflectionMain {
 		
 		
 		/**
-		 *  3. ¸Ş¼Òµå Á¤º¸
-		 *  : private ÀÌ¿©µµ Ãâ·Â µÈ´Ù.
+		 *  3. ë©”ì†Œë“œ ì •ë³´
+		 *  : private ì´ì—¬ë„ ì¶œë ¥ ëœë‹¤.
 		 */
 		Method[] declaredMethods = anyClass.getDeclaredMethods();
 		
@@ -58,17 +58,17 @@ public class ReflectionMain {
 		}
 		
 		/**
-		 * 4. ±¸Á¶Ã¼ Á¤º¸
+		 * 4. êµ¬ì¡°ì²´ ì •ë³´
 		 */
 		Constructor<?>[] constructors = anyClass.getConstructors();
 		
 		System.out.println("Existed Constructor:");
-		for(Constructor<?> c : constructors) {
+		for(Constructor c : constructors) {
 			System.out.println("\t" +c.getName() + ", Param Count: " + c.getParameterCount());
 		}
 		
 		/**
-		 * 5. °°Àº Å¬·¡½ºÀÎÁö È®ÀÎ
+		 * 5. ê°™ì€ í´ë˜ìŠ¤ì¸ì§€ í™•ì¸
 		 */
 		boolean result = anyClass.isInstance(new UserService());
 		System.out.println("IsSameClass? " + result);
