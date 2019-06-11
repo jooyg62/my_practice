@@ -8,5 +8,7 @@
   	<module>reflection</module>
   	<module>enum</module>
   	<module>base64</module>
+  	<module>lamda</module>
+  	<module>JMX</module>
   </modules>
 </project>
